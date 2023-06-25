@@ -1,0 +1,56 @@
+Stmt ::= def id ( args ) do Stmt end Stmt'
+Stmt ::= if ( B ) then Stmt end Stmt'
+Stmt ::= while ( B ) do Stmt end Stmt'
+Stmt ::= int id = E ; Stmt'
+Stmt ::= float id = E ; Stmt'
+Stmt ::= bool id = B ; Stmt'
+Stmt ::= id = E ; Stmt'
+Stmt ::= string id = S ; Stmt'
+
+Stmt' ::= Stmt
+Stmt' ::= ''
+
+args ::= ''
+args ::= arg args'
+args' ::= , args' 
+args' ::= ''
+
+arg ::= type id 
+
+type ::= int 
+type ::= float 
+type ::= bool 
+type ::= string
+
+B ::= B1 B'
+B' ::= or B1 B' 
+B' ::= ''
+B1 ::= B2 B1'
+B1' ::= and B2 B1' 
+B1' ::= ''
+B2 ::= ! B2 
+B2 ::=  True 
+B2 ::=  False
+B2 ::= E Relop E
+B2 ::= STRING Relop STRING
+Relop ::= == 
+Relop ::= != 
+Relop ::= > 
+Relop ::= < 
+Relop ::= >= 
+Relop ::= <=
+
+E ::= T E'
+E' ::= + T E' 
+E'::= - T E' 
+E'::= ''
+T ::= F T'
+T' ::= * F T' 
+T' ::= / F T' 
+T' ::= ''
+F ::= ( E ) 
+F ::= num
+F ::= id
+
+num ::= INT
+num ::= FLOAT
