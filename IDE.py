@@ -56,7 +56,7 @@ def run(event=None):
         else:
             parse.append(lexer.Token(type_='PARSE',value_="$"))
             #print(parse)
-            parser = LL1.Parser()
+            parser = LL1.Parser() 
             parser.main(parse)
             error = parser.algorithm()
             

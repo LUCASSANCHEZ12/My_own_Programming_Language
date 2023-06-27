@@ -1,5 +1,5 @@
 Stmt ::= def id ( args ) do Stmt end Stmt'
-Stmt ::= if ( B ) then Stmt end Stmt'
+Stmt ::= if ( B ) then Stmt else_case
 Stmt ::= while ( B ) do Stmt end Stmt'
 Stmt ::= int id = E ; Stmt'
 Stmt ::= float id = E ; Stmt'
@@ -9,6 +9,9 @@ Stmt ::= string id = S ; Stmt'
 
 Stmt' ::= Stmt
 Stmt' ::= ''
+
+else_case ::= else Stmt end Stmt'
+else_case ::= end Stmt'
 
 args ::= ''
 args ::= arg args'
